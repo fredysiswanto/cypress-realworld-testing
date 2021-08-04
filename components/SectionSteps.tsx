@@ -2,27 +2,6 @@
 import { CheckIcon } from "@heroicons/react/solid"
 import SectionCard from "./SectionCard"
 
-const steps = [
-  {
-    name: "Create account",
-    description: "Vitae sed mi luctus laoreet.",
-    href: "#",
-    status: "complete",
-  },
-  {
-    name: "Profile information",
-    description: "Cursus semper viverra facilisis et et some more.",
-    href: "#",
-    status: "current",
-  },
-  {
-    name: "Business information",
-    description: "Penatibus eu quis ante.",
-    href: "#",
-    status: "upcoming",
-  },
-]
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
@@ -35,7 +14,7 @@ export default function SectionSteps(props) {
           <li
             key={lesson.title}
             className={classNames(
-              index !== steps.length - 1 ? "pb-10" : "",
+              index !== props.lessons.length - 1 ? "pb-10" : "",
               "relative"
             )}
           >
