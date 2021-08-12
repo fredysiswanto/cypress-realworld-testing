@@ -11,11 +11,11 @@ import LessonHero from "../../components/Lesson/LessonHero"
 import LessonLayout from "../../components/Lesson/LessonLayout"
 import MCChallenge from "../../components/Lesson/MultipleChoiceChallenge"
 import FFChallenge from "../../components/Lesson/FreeFormChallenge"
-import {
-  LessonTableOfContents,
-  MultipleChoiceChallenge,
-  FreeFormChallenge,
-} from "../../types/common"
+// import {
+//   LessonTableOfContents,
+//   MultipleChoiceChallenge,
+//   FreeFormChallenge,
+// } from "../../types/common"
 import {
   CONTENT_PATH,
   allContentFilePaths,

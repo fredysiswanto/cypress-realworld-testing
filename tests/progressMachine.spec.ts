@@ -1,7 +1,8 @@
 import { expect } from "chai"
 import { interpret } from "xstate"
 import { progressMachine } from "../machines/progressMachine"
-import { FreeFormPayload, MultipleChoicePayload } from "common"
+// import "../types/global.d"
+/// <reference types="../types/global" />
 
 describe("progress machine", () => {
   let progressService
