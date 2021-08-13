@@ -1,6 +1,5 @@
 import fs from "fs"
 import matter from "gray-matter"
-import { useActor } from "@xstate/react"
 import { progressService } from "../../machines/progressService"
 import { MDXRemoteSerializeResult } from "next-mdx-remote"
 import { serialize } from "next-mdx-remote/serialize"
@@ -25,7 +24,6 @@ import { find, findIndex } from "lodash/fp"
 import rehypeSlug from "rehype-slug"
 import rehypePrism from "@mapbox/rehype-prism"
 import learnJson from "../../learn.json"
-import { props } from "cypress/types/bluebird"
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -66,6 +64,7 @@ export default function LessonPage({
   sectionLessons,
   nextLesson,
   sectionTitle,
+  sectionSlug,
 }: Props) {
   return (
     <Layout>
@@ -83,6 +82,8 @@ export default function LessonPage({
         sectionLessons={sectionLessons}
         nextLesson={nextLesson}
         sectionTitle={sectionTitle}
+        sectionSlug={sectionSlug}
+        progressService={progressService}
       />
       {lessonData.challenges &&
         lessonData.challenges[0].challengeType === "multiple-choice" && (
@@ -124,7 +125,7 @@ export const getStaticProps = async ({ params }) => {
     { slug: params.slug },
     learnJson[params.section].lessons
   )
-  const { title, lessons } = learnJson[params.section]
+  const { title, slug, lessons } = learnJson[params.section]
   const nextLessonIndex = findIndex({ slug: params.slug }, lessons) + 1
   let nextLesson
 
@@ -143,6 +144,7 @@ export const getStaticProps = async ({ params }) => {
       sectionLessons: lessons,
       nextLesson,
       sectionTitle: title,
+      sectionSlug: slug,
     },
   }
 }

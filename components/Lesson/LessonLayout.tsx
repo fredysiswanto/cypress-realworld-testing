@@ -40,7 +40,11 @@ export default function LessonLayout(props) {
           <aside className="hidden xl:block xl:col-span-3">
             <div className="sticky top-6 space-y-4">
               <p className="font-semibold mb-6">{props.sectionTitle}</p>
-              <LessonSteps sectionLessons={props.sectionLessons} />
+              <LessonSteps
+                sectionLessons={props.sectionLessons}
+                progressService={props.progressService}
+                sectionSlug={props.sectionSlug}
+              />
             </div>
           </aside>
         </div>

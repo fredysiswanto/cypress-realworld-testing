@@ -1,5 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { CheckIcon } from "@heroicons/react/solid"
+import { isLessonCompleted } from "../../utils/xstateUtils"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")

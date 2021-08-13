@@ -1,14 +1,10 @@
 import Head from "next/head"
-import { useActor } from "@xstate/react"
 import Layout from "../components/Layout"
 import HomeHero from "../components/Home/HomeHero"
 import HomeSteps from "../components/Home/HomeSteps"
 import learnJson from "../learn.json"
-import { progressService } from "../machines/progressService"
 
 export default function Home({ content, sections }) {
-  const [progressState, progressSend] = useActor(progressService)
-
   return (
     <Layout>
       <HomeHero />
