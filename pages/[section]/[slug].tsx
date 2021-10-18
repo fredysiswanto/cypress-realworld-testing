@@ -14,6 +14,7 @@ import Layout from "../../components/Layout"
 import LessonHero from "../../components/Lesson/LessonHero"
 import LessonLayout from "../../components/Lesson/LessonLayout"
 import MCChallenge from "../../components/Lesson/MultipleChoiceChallenge"
+import LessonDisableChallenges from "../../components/Lesson/LessonDisableChallenges"
 
 const NextLessonBtn = dynamic(
   () => import("../../components/Lesson/NextLessonBtn"),
@@ -118,6 +119,12 @@ export default function LessonPage({
       <NextLessonBtn
         path={nextLesson}
         isCompleted={isLessonCompleted(progressService, lessonPath)}
+      />
+
+      <LessonDisableChallenges
+        progressService={progressService}
+        lessonData={lessonData}
+        lessonPath={lessonPath}
       />
     </Layout>
   )
