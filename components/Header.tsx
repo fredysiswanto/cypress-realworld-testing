@@ -1,6 +1,7 @@
 import { Fragment } from "react"
 import { Popover, Transition } from "@headlessui/react"
 import MobileNav from "./Mobile/MobileNav"
+import Search from "./Search/Search"
 import Link from "next/link"
 import Image from "next/image"
 import learnJson from "../learn.json"
@@ -303,11 +304,7 @@ export default function Header({ content, sections, progressService }) {
               </Popover.Group>
               <div className="flex items-center md:ml-12">
                 {/* Search */}
-                <DocSearch
-                  appId="8V1MWQUQBN"
-                  apiKey="9ed61950eb9df441b30a47fcdd423a48"
-                  indexName="real_world_testing"
-                />
+                <Search />
               </div>
             </div>
           </div>
